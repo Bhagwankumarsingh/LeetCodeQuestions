@@ -6,14 +6,14 @@ public:
         int tens=0;
         for(int i=0;i<n;i++){
             if(bills[i]==5){
-                five++;
+               five++;
             }
             else if(bills[i]==10){
-                if(five==0){
-                   return false;
+                if(five>=1){
+                    five--;
+                    tens++;
                 }
-                five--;
-                tens++;
+                else return false;
             }
             else if(bills[i]==20){
                 if(five>=1 && tens>=1){
