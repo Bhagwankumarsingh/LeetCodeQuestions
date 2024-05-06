@@ -7,7 +7,9 @@ public:
         int cntZ=0;
         int ans=0;
         while(j<n){
-            if(nums[j]==0) cntZ++;
+            if(nums[j]==0){
+                cntZ++;
+            }
             while(cntZ>1){
                 if(nums[i]==0){
                     cntZ--;
