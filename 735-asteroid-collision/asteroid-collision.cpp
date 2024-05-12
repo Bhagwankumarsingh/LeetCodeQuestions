@@ -7,7 +7,7 @@ public:
             if(asteroids[i]>0 || s.empty()){
                 s.push(asteroids[i]);
             }
-            else {
+            else{
                 while(!s.empty() && s.top()>0 && s.top()<abs(asteroids[i])){
                     s.pop();
                 }
@@ -19,6 +19,7 @@ public:
                 }
             }
         }
+       
         vector<int>ans(s.size());
         for(int i=s.size()-1;i>=0;i--){
             ans[i]=s.top();
