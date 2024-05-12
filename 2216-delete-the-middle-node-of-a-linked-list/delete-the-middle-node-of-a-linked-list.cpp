@@ -13,19 +13,19 @@ public:
     ListNode* deleteMiddle(ListNode* head) {
         if(head==NULL) return NULL;
         if(head->next==NULL){
-            delete head;
+            delete(head);
             return NULL;
         }
-        ListNode* prev=NULL;
         ListNode* slow=head;
         ListNode* fast=head;
-        while(fast!=NULL && fast->next!=NULL){
-             prev=slow;
+        ListNode* prev=NULL;
+        while(fast!=NULL && fast->next!=NULL ){
+            prev=slow;
             slow=slow->next;
             fast=fast->next->next;
         }
         prev->next=slow->next;
         delete slow;
-        return  head;
+        return head;
     }
 };
